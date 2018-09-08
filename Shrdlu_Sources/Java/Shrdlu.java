@@ -67,7 +67,8 @@ public class Shrdlu extends Frame implements ActionListener {
   private void StartMe() {
   
     try {
-      Process p = Runtime.getRuntime().exec("clisp.exe -M lispinit.mem loader");
+      // GM Process p = Runtime.getRuntime().exec("clisp.exe -M lispinit.mem loader");
+      Process p = Runtime.getRuntime().exec("clisp loader");
 	  shrdluErr = new BufferedReader(new InputStreamReader(p.getErrorStream()));
       shrdluOutput = new BufferedReader(new InputStreamReader(p.getInputStream()));
 	  shrdluInput = new PrintStream(p.getOutputStream());

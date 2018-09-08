@@ -43,7 +43,8 @@ System.out.println("connection accepted...");
       // establish streams on the socket
       outStream = new DataOutputStream(socket.getOutputStream());
       inStream = new DataInputStream(socket.getInputStream());
-      Process p = Runtime.getRuntime().exec("clisp.exe -M lispinit.mem loader");
+      // Process p = Runtime.getRuntime().exec("clisp.exe -M lispinit.mem loader");
+      Process p = Runtime.getRuntime().exec("clisp loader");
 	  DataInputStream shrdluErr = new DataInputStream(p.getErrorStream());
       DataInputStream shrdluOutput = new DataInputStream(p.getInputStream());
 	  DataOutputStream shrdluInput = new DataOutputStream(p.getOutputStream());
